@@ -10,6 +10,7 @@ export const GlobalContext = ({ children }) => {
   const [lastUpdate, setLastUpdate] = useState(Date.now());
   const [deleteList, setDeleteList] = useState(null);
   const [editList, setEditList] = useState(null);
+  const [editListModal, setEditListModal] = useState(null);
 
   return (
     <Global.Provider
@@ -24,6 +25,8 @@ export const GlobalContext = ({ children }) => {
         setDeleteList,
         editList,
         setEditList,
+        setEditListModal,
+        editListModal,
       }}
     >
       {children}
