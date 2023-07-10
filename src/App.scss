@@ -1,0 +1,76 @@
+@mixin displayCenter($justify, $align, $gap) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  gap: $gap;
+}
+
+.app-container {
+  background-color: rgb(187, 177, 177);
+  min-height: 100vh;
+
+  .content {
+    @include displayCenter(center, center, 20px);
+
+    .form {
+      width: 310px;
+      background-color: white;
+      border-radius: 10px;
+      margin-top: 20px;
+      @include displayCenter(center, flex-start, 0px);
+      flex-direction: column;
+
+      h3 {
+        margin-bottom: 20px;
+      }
+
+      .border {
+        width: 100%;
+        border-bottom: 1px solid gray;
+      }
+      .headline {
+        font-size: 16px;
+        padding: 12px;
+        background-color: rgb(246, 241, 241);
+        width: 100%;
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
+      }
+
+      .form-content {
+        flex-direction: column;
+        padding: 12px;
+      }
+
+      .form-bottom {
+        @include displayCenter(center, flex-start, 15px);
+        flex-direction: column;
+
+        .input {
+          width: 200px;
+        }
+      }
+    }
+
+    .list {
+      width: 1000px;
+    }
+  }
+}
+
+button {
+  background-color: #00a2ed;
+  padding: 8px;
+  border: none;
+  width: 55px;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  height: 30px;
+
+  &:hover {
+    background-color: white;
+    color: #00a2ed;
+    border: 1px solid black;
+  }
+}
