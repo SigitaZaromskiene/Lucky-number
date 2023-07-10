@@ -2,6 +2,7 @@ import { Global } from "./Global";
 import { useContext, useEffect } from "react";
 import { read, create } from "./localStorage";
 import List from "./List";
+import { destory } from "./localStorage";
 
 const KEY = "Lucky";
 
@@ -12,6 +13,7 @@ function NumbersList() {
     lastUpdate,
     setNumber,
     setLastUpdate,
+    deleteList,
   } = useContext(Global);
 
   useEffect(() => {
@@ -26,13 +28,21 @@ function NumbersList() {
     setLastUpdate(Date.now());
   }, [setNumber]);
 
+  useEffect(() => {
+    if (deleteList === null) {
+      return;
+    }
+    destory(KEY, deleteList.id);
+    setLastUpdate(Date.now());
+  }, [deleteList]);
+
   if (savedNumberList === null) {
     return "Loading...";
   }
   return (
     <div className="list-container">
       {savedNumberList.map((li) => (
-        <List li={li} />
+        <List key={li.id} li={li} />
       ))}
     </div>
   );

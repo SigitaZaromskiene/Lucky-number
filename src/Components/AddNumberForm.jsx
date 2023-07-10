@@ -11,8 +11,6 @@ function AddNumberForm() {
     setSelectNumber2({
       number: selectNumber,
     });
-
-    console.log(setNumber);
   };
   return (
     <div className="form">
