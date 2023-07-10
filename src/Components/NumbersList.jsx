@@ -1,6 +1,7 @@
 import { Global } from "./Global";
 import { useContext, useEffect } from "react";
 import { read, create } from "./localStorage";
+import List from "./List";
 
 const KEY = "Lucky";
 
@@ -29,9 +30,9 @@ function NumbersList() {
     return "Loading...";
   }
   return (
-    <div>
+    <div className="list-container">
       {savedNumberList.map((li) => (
-        <li>{li.number}</li>
+        <List li={li} />
       ))}
     </div>
   );

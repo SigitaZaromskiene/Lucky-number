@@ -10,7 +10,8 @@
   min-height: 100vh;
 
   .content {
-    @include displayCenter(center, center, 20px);
+    @include displayCenter(center, center, 200px);
+    padding: 35px;
 
     .form {
       width: 310px;
@@ -62,13 +63,32 @@
       width: 1000px;
     }
   }
+  .list-container {
+    width: 600px;
+
+    .list {
+      border: 1px solid black;
+      padding: 10px;
+      border-radius: 5px;
+      background-color: white;
+      width: 400px;
+      list-style: none;
+      margin-bottom: 20px;
+      color: red;
+      font-weight: 600;
+      font-size: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
 }
 
 button {
   background-color: #00a2ed;
   padding: 8px;
   border: none;
-  width: 55px;
+  width: 65px;
   border-radius: 5px;
   color: white;
   cursor: pointer;
