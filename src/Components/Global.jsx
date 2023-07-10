@@ -9,8 +9,8 @@ export const GlobalContext = ({ children }) => {
   const [savedNumberList, addSavedNumberList] = useState(null);
   const [lastUpdate, setLastUpdate] = useState(Date.now());
   const [deleteList, setDeleteList] = useState(null);
+  const [editList, setEditList] = useState(null);
 
-  console.log(deleteList);
   return (
     <Global.Provider
       value={{
@@ -22,6 +22,8 @@ export const GlobalContext = ({ children }) => {
         setNumber,
         deleteList,
         setDeleteList,
+        editList,
+        setEditList,
       }}
     >
       {children}
