@@ -22,7 +22,14 @@ function AddNumberForm() {
             }}
           >
             <p>{selectNumber}</p>
-            <input className="input" type="range" min="1" max="99" />
+            <input
+              onChange={(e) => setSelectNumber(e.target.value)}
+              className="input"
+              type="range"
+              min="1"
+              max="99"
+              value={selectNumber}
+            />
           </div>
 
           <Button text="Add"></Button>

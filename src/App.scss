@@ -42,12 +42,18 @@
         padding: 12px;
       }
 
+      p {
+        color: red;
+        font-size: 22px;
+      }
+
       .form-bottom {
         @include displayCenter(center, flex-start, 15px);
         flex-direction: column;
 
         .input {
           width: 200px;
+          cursor: pointer;
         }
       }
     }
