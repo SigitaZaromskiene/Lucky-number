@@ -1,14 +1,19 @@
+import { useContext } from "react";
 import "./App.scss";
 import AddNumberForm from "./Components/AddNumberForm";
+import { GlobalContext } from "./Components/Global";
+import NumbersList from "./Components/NumbersList";
 
 function App() {
   return (
-    <div className="app-container">
-      <div className="content">
-        <AddNumberForm></AddNumberForm>
-        <div className="list"></div>
+    <GlobalContext>
+      <div className="app-container">
+        <div className="content">
+          <AddNumberForm></AddNumberForm>
+          <NumbersList />
+        </div>
       </div>
-    </div>
+    </GlobalContext>
   );
 }
 

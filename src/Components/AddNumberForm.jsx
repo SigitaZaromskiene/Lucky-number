@@ -1,9 +1,19 @@
 import Button from "./Button";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { Global } from "./Global";
+import { v4 as uuidv4 } from "uuid";
 
 function AddNumberForm() {
   const [selectNumber, setSelectNumber] = useState(1);
+  const { setSelectNumber2, setNumber } = useContext(Global);
 
+  const saveNumberHandler = () => {
+    setSelectNumber2({
+      number: selectNumber,
+    });
+
+    console.log(setNumber);
+  };
   return (
     <div className="form">
       <p className="headline">Add new number</p>
@@ -31,8 +41,7 @@ function AddNumberForm() {
               value={selectNumber}
             />
           </div>
-
-          <Button text="Add"></Button>
+          <Button text="Add" action={saveNumberHandler}></Button>
         </div>
       </div>
     </div>
