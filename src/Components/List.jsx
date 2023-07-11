@@ -1,11 +1,28 @@
 import Button from "./Button";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { Global } from "./Global";
 import EditListModal from "./EditListModal";
 
+import { edit } from "./localStorage";
+const KEY = "Lucky";
+
 function List({ li }) {
-  const { setDeleteList, setEditList, setEditListModal, editListModal } =
-    useContext(Global);
+  const {
+    setDeleteList,
+    setEditList,
+    setEditListModal,
+    editListModal,
+    setLastUpdate,
+    editedValue,
+  } = useContext(Global);
+
+  useEffect(() => {
+    if (editedValue === null) {
+      return;
+    }
+    edit(KEY, editedValue, editedValue.id);
+    setLastUpdate(Date.now());
+  }, [editedValue]);
 
   return (
     <div style={{ display: " flex", gap: "20px" }}>

@@ -1,18 +1,33 @@
 import Button from "./Button";
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { Global } from "./Global";
 
 function EditListModal({ li }) {
-  const { setEditListModal, savedNumberList } = useContext(Global);
+  console.log(li);
+  const { setEditListModal, setEditedValue, editedValue, setLastUpdate } =
+    useContext(Global);
 
-  console.log(savedNumberList);
+  const [newValue, setNewValue] = useState(li.number);
 
-  const [newValue, setNewValue] = useState(li);
+  const editedValueHandler = () => {
+    setEditedValue({
+      number: newValue,
+      id: li.id,
+    });
+    setEditListModal(null);
+  };
+
   return (
     <div className="range-modal">
-      <label>{li.number}</label>
-      <input type="range" min="1" max="99" />
-      <Button text="Save"></Button>
+      <label>{newValue}</label>
+      <input
+        type="range"
+        min="1"
+        max="99"
+        onChange={(e) => setNewValue(e.target.value)}
+        value={newValue}
+      />
+      <Button action={editedValueHandler} text="Save"></Button>
       <Button action={() => setEditListModal(null)} text="Cancel"></Button>
     </div>
   );

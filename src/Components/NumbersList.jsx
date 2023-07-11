@@ -14,6 +14,7 @@ function NumbersList() {
     setNumber,
     setLastUpdate,
     deleteList,
+    editedValue,
   } = useContext(Global);
 
   useEffect(() => {

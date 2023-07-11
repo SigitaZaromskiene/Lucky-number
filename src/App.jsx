@@ -4,8 +4,6 @@ import AddNumberForm from "./Components/AddNumberForm";
 import { GlobalContext } from "./Components/Global";
 import NumbersList from "./Components/NumbersList";
 
-const KEY = "Lucky";
-
 function App() {
   return (
     <GlobalContext>
