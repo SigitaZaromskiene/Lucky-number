@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import "./App.scss";
 import AddNumberForm from "./Components/AddNumberForm";
 import { GlobalContext } from "./Components/Global";

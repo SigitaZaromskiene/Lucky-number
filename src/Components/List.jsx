@@ -9,7 +9,6 @@ const KEY = "Lucky";
 function List({ li }) {
   const {
     setDeleteList,
-    setEditList,
     setEditListModal,
     editListModal,
     setLastUpdate,

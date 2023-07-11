@@ -5,7 +5,7 @@ import { v4 as uuidv4 } from "uuid";
 
 function AddNumberForm() {
   const [selectNumber, setSelectNumber] = useState(1);
-  const { setSelectNumber2, setNumber } = useContext(Global);
+  const { setSelectNumber2 } = useContext(Global);
 
   const saveNumberHandler = () => {
     setSelectNumber2({

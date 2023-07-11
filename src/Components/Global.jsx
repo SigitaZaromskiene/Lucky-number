@@ -1,6 +1,5 @@
 import { createContext } from "react";
 import { useState } from "react";
-import useWrite from "./useWrite";
 
 export const Global = createContext();
 

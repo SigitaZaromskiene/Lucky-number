@@ -4,8 +4,7 @@ import { Global } from "./Global";
 
 function EditListModal({ li }) {
   console.log(li);
-  const { setEditListModal, setEditedValue, editedValue, setLastUpdate } =
-    useContext(Global);
+  const { setEditListModal, setEditedValue } = useContext(Global);
 
   const [newValue, setNewValue] = useState(li.number);
 
