@@ -1,7 +1,6 @@
 ## 🌟 About
 
 This project is for educational porpuses only. 
-Project still in progress.
 
 
 ## 🎯 Project features/goals
