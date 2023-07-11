@@ -16,7 +16,9 @@ function List({ li }) {
           <Button text="Change" action={() => setEditListModal(li)} />
         </div>
       </div>
-      {editListModal ? <EditListModal /> : null}
+      {editListModal && li.id === editListModal.id ? (
+        <EditListModal li={li} />
+      ) : null}
     </div>
   );
 }
