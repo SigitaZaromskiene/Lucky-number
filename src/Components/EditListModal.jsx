@@ -1,9 +1,8 @@
 import Button from "./Button";
-import { useContext, useState, useEffect } from "react";
+import { useContext, useState } from "react";
 import { Global } from "./Global";
 
 function EditListModal({ li }) {
-  console.log(li);
   const { setEditListModal, setEditedValue } = useContext(Global);
 
   const [newValue, setNewValue] = useState(li.number);
